@@ -4,7 +4,7 @@ var lesson = [
     id : 11,
     "subject": "Math",
     "location": "north london",
-    "price": 5.99,
+    "price": 5.94,
     "space": 5,
     "img": "maths.png"
 },
