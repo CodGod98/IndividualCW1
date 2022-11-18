@@ -78,7 +78,7 @@ var lesson = [
     "location": "Exeter",
     "price": 15.99,
     "space": 5,
-    "img": "it.jpeg"
+    "img": "xit.jpeg"
 },
 
 
