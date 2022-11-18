@@ -38,7 +38,7 @@ var lesson = [
     "location": "west london",
     "price": 5.99,
     "space": 5,
-    "img": "astro.png"
+    "img": "xastro.png"
 },
 {
     "id" : 6,
@@ -46,7 +46,7 @@ var lesson = [
     "location": "south london",
     "price": 12.99,
     "space": 5,
-    "img": "eng.png"
+    "img": "xeng.png"
 },
 {
     "id" : 7,
@@ -54,7 +54,7 @@ var lesson = [
     "location": " west london",
     "price": 13.99,
     "space": 5,
-    "img": "bio.png"
+    "img": "xbio.png"
 },
 {
     "id" : 8,
@@ -62,7 +62,7 @@ var lesson = [
     "location": "Norwich",
     "price": 10.99,
     "space": 5,
-    "img" : "emath.png"
+    "img" : "xemath.png"
 },
 {
     "id" : 9,
@@ -70,7 +70,7 @@ var lesson = [
     "location": "east london",
     "price": 5.99,
     "space": 5,
-    "img": "foot.png"
+    "img": "xfoot.png"
 },
 {
     "id" : 10,
