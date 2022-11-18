@@ -14,7 +14,7 @@ var lesson = [
     "location": "brighton",
     "price": 2.99,
     "space": 5,
-    "img": "sport1.png",
+    "img": "xsport1.png",
 },
 {
     "id" : 3,
