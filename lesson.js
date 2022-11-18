@@ -6,7 +6,7 @@ var lesson = [
     "location": "north london",
     "price": 5.94,
     "space": 5,
-    "img": "maths.png"
+    "img": "xmaths.png"
 },
 {
     "id" : 2,
@@ -30,7 +30,7 @@ var lesson = [
     "location": "reading",
     "price": 7.89,
     "space": 5,
-    "img": "phys.JPEG"
+    "img": "xphys.JPEG"
 },
 {
     "id" : 5,
