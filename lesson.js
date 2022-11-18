@@ -1,4 +1,4 @@
-var lesson = [
+var lesson = [     //Lesson ARRAY
 
 {
     id : 11,
