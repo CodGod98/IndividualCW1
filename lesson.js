@@ -22,7 +22,7 @@ var lesson = [
     "location": "newcastle",
     "price": 7.89,
     "space": 5,
-    "img": "psy.png"
+    "img": "xpsy.png"
 },
 {
     "id" : 4,
