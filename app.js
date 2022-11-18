@@ -14,28 +14,17 @@ let app = new Vue ({
         
     },
 
-    
-    //methods: {
-       
-      //  addToCart: function(){
-          //  this.cart.push({
-            //    lesson:lesson
-            //}),
-        //}, 
-  //  },//
 
-
-
-methods: {
-    submitForm(){
+methods: {                             
+    submitForm(){                         //Form Submission At Checkout, Alert Prompt
         alert('Order Has Been Submitted')
 
-    },
+    },   
 
-    addToCart (lesson) {
+    addToCart (lesson) {            
        let cartItem = this.GetCartItem(lesson);
 
-       if(cartItem != null){
+       if(cartItem != null){                            //if the cart item is null then add 1 to quantity else add the lesson to the cart
         cartItem.quantity++;
         } else {
             this.cart.push({
@@ -45,8 +34,8 @@ methods: {
         }
         lesson.space--;
     },
-  
-    cartCount(id) {
+
+    cartCount(id) {               //counts how many items are added to the cart, and adds to the cart 
         let count = 0;
         for(let i = 0; i < this.cart.length; i++) {
             if(this.cart[i] === lesson.id) {
@@ -55,24 +44,23 @@ methods: {
         }
         return count;
     },
-
-
-    canAddToCart(lesson) {
+    canAddToCart(lesson) {        //allows the product to be added to cart if there are lessons availble
         return lesson.space > this.cartCount(lesson.id);
 
     },
     
-    showCheckout() {
+    showCheckout() {                   //shows the check out when toogled
         this.showlesson = this.showlesson? false: true;
     },
 
-    GetCartItem(lesson){
+    GetCartItem(lesson){          //Gets the item in cart By id
         for (i= 0; i < this.cart.length; i++) {
             if(this.cart[i].lesson.id === lesson.id) {
                 return this.cart[i]
             }
         }
     },
+
 
     removeItem(item) {
         item.quantity = item.quantity -1;
@@ -86,17 +74,12 @@ methods: {
     
     
 
-   
-    /*     showCheckout: function() {
-        this.showlesson = this.showlesson? false: true;
-    },
- */
     
 
           
         
     }, 
-   computed:{
+computed:{
 
     lessonSearch () {
         tempLessons = this.lesson;
@@ -109,19 +92,19 @@ methods: {
         
         }
         return tempLessons
-    },
+        },
 
-        enableSubmit: function(){
+        enableSubmit: function(){                        //checks phone and name for regular expressions
             let isnum = /^\d+$/.test(this.order.phone);
             let isletter = /^[A-Za-z]+$/.test(this.order.name);
             return isnum == true && isletter == true
         },
 
-         totalItems: function() {
+         totalItems: function() {                           //returns the number of items in cart
             return this.cart.length;
         }, 
 
-        sortedProductsAscending() {
+        sortedProductsAscending() {                                //Sorting,
             function compare(a, b) {
                 if (a.price > b.price) return 1;
                 if (a.price < b.price) return -1;
@@ -130,7 +113,7 @@ methods: {
             return this.lesson.sort(compare);
         },
 
-        sortedProductsDescending() {
+        sortedProductsDescending() {                            //Sorting 
             function compare(a, b) {
                 if (a.price > b.price) return -1;
                 if (a.price < b.price) return  1;
@@ -139,19 +122,11 @@ methods: {
             return this.lesson.sort(compare);
         },
 
-        enableCheckout: function(){
+        enableCheckout: function(){                        //Enables the checkout when cart has more than 0 items
             return this.cart.length > 0;
         },
 
-   
-
-       /*  canAddToCart: function() {
-            return this.lesson.space >
-            this.totalItems;
-            
-        } */
-
-  }
+}
 
 })
 

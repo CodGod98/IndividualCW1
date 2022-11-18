@@ -18,8 +18,9 @@
   </head>
   
   <body>
-    <div id="app">
-        <div class="checkout">
+  
+    <div id="app">    <!-- Application start-->      
+        <div class="checkout">                  <!-- Checkout Buttons-->
         <header>
             <button class="fa fa-shopping-basket" class="text-center" class="btn btn-outline-dark mt-auto" v-if="enableCheckout" @click="showCheckout">{{totalItems}} Checkout!</button>
             <button class="fa fa-shopping-basket" class="text-center" class="btn btn-outline-dark mt-auto" disabled v-else>Checkout</button>
@@ -27,13 +28,13 @@
             <!--                           Buttons Below are the Sort Buttons                            -->
             <button class="text-center" class="btn btn-outline-dark mt-auto" v-on:click="lesson in sortedProductsAscending">Ascending</button>
             <button class="text-center" class="btn btn-outline-dark mt-auto" v-on:click="lesson in sortedProductsDescending">Descending</button>
-
-            <!-- <div v-onclick="lesson in sortedProducts"></div> -->
           </header>
-          <div v-if="showlesson">
+
+
+          <div v-if="showlesson"> <!-- Showing Lesson Instance using "if"-->
             <p>
-                <label>Search Lesson: </label>
-                <input type="text" v-model="search" placeholder="Type something">
+                <label>Search Lesson: </label> 
+                <input type="text" v-model="search" placeholder="Type something"> <!-- Search input-->
             </p>
             
             <section class="py-5">
@@ -45,51 +46,39 @@
                             <div class="card-body p-4" >
                                 <img img v-bind:src="lesson.img">
                                 <div class="text-center">
-                                    <div class="container2">
-                                        <!-- <div v-for ="(lesson, key) in sortedLessons" class="item"> -->
-                                      
-                                    <!-- <div v-if="showProduct"></div> -->
-                                   <!-- <div v-for="lesson.id" class="lesson"> -->
+                                    <div class="container2">                        
                                     <div>Subject: {{lesson.subject}}</div>
-                                    <div>Location: {{lesson.location}}</div>
+                                    <div>Location: {{lesson.location}}</div>  <!-- Displaying Lesson Array Details-->
                                     <div>Spaces: {{lesson.space}}</div>
                                     <div>Price: {{lesson.price}}</div>
-                                    <div> {{lesson.id}}</div>
-                                    
-                                   
-                                  
-                                </div>
+                                    <div> {{lesson.id}}</div>  
                                 </div>
                             </div>
+                        </div>                      <!-- Add To Cart Button-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                                 <button class="text-center" class="btn btn-outline-dark mt-auto" v-on:click="addToCart(lesson)" v-if="canAddToCart(lesson)">add to cart</button>
                                 <button class="text-center" class="btn btn-outline-dark mt-auto" v-else disabled>add to cart</button>
                                 <span v-if="lesson.space === cartCount(lesson.id)"> all out</span>
                                 <span v-else-if="lesson.space - cartCount(lesson.id) < 5"> only {{lesson.space - cartCount(lesson.id)}} left</span>
                                 <span v-else>Availble to purchase {{(lesson.space)}}</span>
-                                <!-- <div class="text-center"><a class="btn btn-outline-dark mt-auto" v-else-if="lesson.space - getCartItem(lesson.id) < 5"> Only {lesson.space - getCartItem(lesson.id)}} left!</a></div>
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" v-else> Buy now</a></div> --> 
-                               <!-- <div class="text-center" v-if="canAddToCart"><a class="btn btn-outline-dark mt-auto" v-on:click="addToCart" >Add to Cart</a></div>-->
-                                <!-- <div class="text-center"><a class="btn btn-outline-dark mt-auto" v-else disabled >Soldout</a></div> -->
-                                <!-- </div> -->
                             </div>
-                        </div>
-                    </div>
+                </div>
+                 </div>
                 </div>
         
-            </div>
+         </div>
         </section>
         </div>
     
-        <div v-else>
+        <div v-else> <!-- Displaying Shopping Cart Using "else"-->
 
-             <!--Checkout Page-->
-             <h2>Shopping Cart</h2>
+             
+             <h2>Shopping Cart</h2> <!-- Shopping Cart -->
              <table>
                  <thead>
                      <tr>
-                         <th>Lesson</th>
-                         <th>Location</th>
+                         <th>Lesson   </th>
+                         <th>Location</th>  <!-- Displaying Cart Detail headings-->
                          <th>Space</th>
                          <th>Price</th>
                      </tr>
@@ -97,7 +86,7 @@
                  <tbody>
                      <tr v-for="item in cart"> 
                          <td>{{item.lesson.subject}}</td>
-                         <td>{{item.lesson.location}}</td>
+                         <td>{{item.lesson.location}}</td>  <!-- Displaying Products That have been added to cart-->
                           <td>{{item.quantity}}</td>
                          <td>{{item.lesson.price}}</td>
                          <td>
@@ -108,20 +97,21 @@
                      </tr>
                  </tbody>
              </table>
-             <h2> Welcome to Checkout</h2>
+             <h2> Welcome to Checkout</h2> <!-- Check Out-->
              <p>
                 Name:
-                <input v-model="order.name">
+                <input v-model="order.name">           <!-- User Input Name-->
              </p>
              <p>
                 phone:
-                <input v-model.number="order.phone">
+                <input v-model.number="order.phone">   <!-- User Input Phone Number-->
              </p>
              <div class="submit">
-                    <p>Name: {{order.name}}</p>
+                    <p><strong>Customer Information:</strong></p> <!-- Displays Customer Information Simtainously-->
+                    <p>Name: {{order.name}}</p>          
                     <p>Phone: {{order.phone}}</p> 
              </div>
-             <button v-if="enableSubmit" v-on:click="submitForm"> submit</button>
+             <button v-if="enableSubmit" v-on:click="submitForm"> submit</button>   <!-- Submit Button-->
              <button v-else disabled>Submit</button>
 
 
